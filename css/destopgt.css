@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --primary-color: #48a2d6;
+  --text-black: #000;
+  --text-while: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "outfit";
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container .image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/rainbow/19.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.logo img {
+  width: 150px;
+  height: 100px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.container .content {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #eee;
+}
+
+.container .content .cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.1;
+  filter: grayscale(2);
+}
+
+.navigation {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navigation .navbar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--text-black);
+  padding: 10px 50px;
+}
+
+.navigation .navbar .nav-link a {
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-black);
+  position: relative;
+  letter-spacing: 5ox;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.navigation .navbar .nav-link a:hover {
+  color: var(--primary-color);
+}
+
+.navigation .navbar .nav-link a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3.5px;
+  left: 0;
+  bottom: -5px;
+  background: var(--primary-color);
+  border-radius: 100px;
+  transition: 0.5s ease-in-out;
+}
+
+.navigation .navbar .nav-link a:hover::before {
+  width: 100%;
+}
+
+.navigation .navbar .nav-link.active a {
+  color: var(--primary-color);
+}
+
+.navigation .navbar .nav-link.active a::before {
+  width: 100%;
+}
+
+.about {
+  position: absolute;
+  top: 15%;
+  left: 80px;
+  z-index: 9999;
+  width: 500px;
+}
+
+.about .logo {
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.about .title {
+  font-size: 3.3rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.about .topic {
+  font-size: 3.3rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.about .des {
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+}
+
+.about .imdb {
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+}
+
+.about .imdb i {
+  color: rgb(255, 183, 0);
+}
+
+.about .imdb span {
+  color: #484848;
+}
+
+.about .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: 40px;
+  gap: 10px;
+}
+
+.about .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--text-white);
+  background: var(--primary-color);
+  border: none;
+}
+
+.about .buttons a.secondary {
+  border: 1px solid var(--text-black);
+  color: var(--text-black);
+  background: transparent;
+}
+
+/* 2*/
+.content .cards {
+  position: absolute;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+  right: 0;
+  bottom: 20px;
+  width: 83%;
+  height: 200px;
+}
+
+.content .cards::-webkit-scrollbar {
+  display: none;
+}
+
+.content .cards .card {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.content .cards .card .image {
+  width: 150px;
+  height: 200px;
+  background: transparent;
+}
+
+.content .cards .card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: saturate(0);
+  transition: 0.5s;
+}
+
+.content .cards .card .image img:hover {
+  filter: saturate(1);
+}
+
+.content .cards .card .image .caption {
+  position: absolute;
+  bottom: 10px; /* cách đáy 10px */
+  left: 10px; /* cách trái 10px */
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* nền mờ đen */
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+.container .content .cards .card .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.epi-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.epi-content .title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* series page */
+
+.series-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/SLIME/3.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.about .buttons button a {
+  text-decoration: none;
+  color: var(--text-while);
+}
+
+/* narutogt page */
+
+.naruto-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/naruto/1.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+/* dragonballgt page */
+
+.dragonball-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/dragonball/3.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+
+.maruko-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/maruko/3.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+.atack-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/attackontitan/1.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+.dragonball-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/dragonball/3.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+.lophoc-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/lophocbiettuot/2.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+.pokemon-image {
+  width: 50%;
+  height: 100%;
+  background: url(../img/pokemon/1.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 9999;
+}
+/* episode page */
+
+.episode-container {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--text-while);
+  margin-bottom: 380px;
+}
+
+.episode-container .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130vh;
+  object-fit: cover;
+  opacity: 0.1;
+  filter: saturate(0);
+}
+
+.episode-container .episode-nav {
+  width: 100%;
+  height: 80px;
+  position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+.episode-container .episode-nav .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.episode-section {
+  width: 100%;
+  padding-left: 60px;
+}
+
+.episode-section .topic {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-black);
+  padding-left: 15px;
+  border-left: 5px solid var(--primary-color);
+  letter-spacing: 0.2rem;
+  z-index: 9999;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  line-height: 65px;
+}
+
+.episode-section .epi {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  letter-spacing: 0.2rem;
+  margin-bottom: 50px;
+}
+
+.episodes-cards {
+  width: 94%;
+  height: 350px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  row-gap: 50px;
+}
+
+.episodes-cards .episode-card {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  box-shadow: 5px 10px 15px #00000063;
+  background: var(--primary-color);
+  border-radius: 20px;
+}
+
+.episodes-cards .episode-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, var(--text-black), transparent);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.episodes-cards .episode-card .image {
+  width: 260px;
+  height: 260px;
+}
+/**/
+.episodes-cards .episode-card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.episodes-cards .episode-card:hover img {
+  transform: scale(1.1);
+}
+/**/
+.episodes-cards .episode-card .epi-content {
+  position: absolute;
+  bottom: 25px;
+  left: 18px;
+  right: 8px;
+  z-index: 99;
+}
+
+.episodes-cards .episode-card .epi-content .title {
+  font-size: 1rem;
+  color: var(--text-while);
+  font-weight: 600;
+}
+
+.episodes-cards .episode-card .epi-content .desc {
+  color: #bfbfbf;
+  margin-top: 5px;
+}

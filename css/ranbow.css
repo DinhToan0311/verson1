@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f9ff;
+  color: #1e1e1e;
+}
+.anime-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
+/*ảnh*/
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  background-color: #000; /* tuỳ chỉnh màu nền */
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+/* PHẦN 0 Thanh cong cu */
+.navigation.episode-nav {
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  ); /* bạn đổi màu nếu cần */
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* ✅ dồn hết về bên phải */
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+  color: #48a2d6; /* màu hover xanh hoặc tùy ý */
+}
+/* PHẦN 1 */
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.video-container {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+.info {
+  flex: 1.2;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1em;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.metadata p {
+  font-size: 0.95em;
+  margin: 4px 0;
+  color: #555;
+}
+
+.rating {
+  margin: 10px 0;
+}
+
+.stars {
+  color: gold;
+}
+
+.tags span {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 5px 5px 0 0;
+  display: inline-block;
+}
+
+.actions button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* PHẦN 1.5: video */
+.video-player {
+  margin: 30px 0;
+  text-align: center;
+}
+.video-player video {
+  width: 640px; /* 👈 Kích cỡ phát video tiêu chuẩn */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto; /* 👈 Căn giữa */
+}
+
+/* PHẦN 2: Tập */
+.episodes {
+  margin-top: 30px;
+}
+
+.episodes h2 {
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+.episode-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.episode-btn {
+  padding: 10px 15px;
+  background: #e0e7ff;
+  color: #1e40af;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none; /* để bỏ gạch chân */
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.episode-btn:hover {
+  background: #93c5fd;
+}
+
+.episode-btn:hover {
+  background: #93c5fd;
+}
+
+/* PHẦN 3: Đề xuất */
+.suggestions {
+  margin-top: 40px;
+}
+
+.suggestions h2 {
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+.suggest-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.suggest-item {
+  width: 160px;
+  text-align: center;
+}
+
+.suggest-item img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.suggest-item img:hover {
+  transform: scale(1.05);
+}
+
+/* PHẦN 4: Bình luận */
+.comments {
+  margin-top: 50px;
+}
+
+.comments textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.comments button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#commentList p {
+  background: #eff6ff;
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 5px solid #3b82f6;
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  background-color: #e0f2fe;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+}
+/* fotter */
+.footer-logo {
+  font-weight: bold;
+  color: #2563eb;
+  font-size: 1.2em;
+}
+.poster-container {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.poster-container img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.poster-container:hover img {
+  transform: scale(1.05);
+}
